@@ -21,8 +21,9 @@ opts.ExtraColumnsRule = "ignore";
 opts.EmptyLineRule = "read";
 
 % Import the data
-Saison1 = readtable("T:\Saison20232024.csv", opts);
+Saison1 = readtable("datasets\Saison20232024.csv", opts);
 
+save datasets\Saison20232024.mat Saison1
 
 %% Clear temporary variables
 clear opts
