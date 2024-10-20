@@ -35,6 +35,6 @@ for i=1:numCols
 end
 savefig("outputs/figures/HistogramsDistributions.fig")
 close;
-scatter(Mtilde(:,1),Mtilde(:,1),'filled');
+scatter(M(1),ylabel,'filled','d')
 % Nuage de points par paires 
 
