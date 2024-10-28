@@ -2,16 +2,18 @@ function ans = main()
 ans = 0;
 continue_p = true;
     while continue_p == true
-        filename = input("Input the name of file that you want to run: EchantillonageSn, ConvertCSVTOMAP, Question11, Saison \n\n"); 
+        filename = input("Input the name of file that you want to run: ShowOutPuts, EchantillonageSn, ConvertCSVTOMAP, Question11, Saison \n\n"); 
         switch filename
             case "EchantillonageSn" 
                EchantillonageSn();
             case "Question11"
                 Question11();
             case "Saison"
-                Saison()
+                Saison();
             case "ConvertCSVTOMAP"
-                ConvertCSVTOMAP()
+                ConvertCSVTOMAP();
+            case "ShowOutPuts"
+                ShowOutPuts();
         end
         prompt = "Do you want more? Y/N [Y]: ";
         txt = input(prompt,"s");

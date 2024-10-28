@@ -8,8 +8,15 @@ function ans = Saison (path)
     x = path;
  end
  [Mtilde,M,mu,Sigma_chapeau,R_chapeau, sd] = DefaultStats(x);
- out = fprintf('La moyenne %d, Sigma Chapeau %d, R chapeau %d, Standart deviation %d\n',mu, Sigma_chapeau, R_chapeau, sd);
- disp(out);
+ disp(["std",sd]);
+ disp(["mu",mu]);
+ disp("variance");
+ disp(Sigma_chapeau);
+ disp("covariance");
+ disp(R_chapeau);
+
+ %out = fprintf('La moyenne %d, Sigma Chapeau %d, R chapeau %d, Standart deviation %d\n',mu, Sigma_chapeau, R_chapeau, sd);
+ %disp(out);
  disp("Work space save at outputs\data\workspaceSaision.mat");
  disp("images save at outputs\figures");
 end

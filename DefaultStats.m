@@ -26,24 +26,27 @@ function [Mtilde,M,mu,Sigma_chapeau,R_chapeau, sd] = DefaultStats(path, titles)
 
     numCols = size(M);
     numCols = numCols(2);
-    figure;
+    fig =figure;
     for i=1:numCols
         subplot(2,2,i);
         histogram(Mtilde(:,i));
         title(titles(i));
     end
+    
     savefig("outputs/figures/HistogramsDistributions.fig")
+    saveas(fig,"outputs/figures/HistogramsDistributions.png","png")
     close;
     
     % Nuage de points par paires 
     
-    figure;
+    fig = figure;
     [b,ax] = plotmatrix(Mtilde,Mtilde);
     for i=1:numCols
         ylabel (ax(i,1),titles(i));
         xlabel (ax(numCols,i),titles(i));
     end
     savefig("outputs/figures/ScratterPlot.fig")
+    saveas(fig,"outputs/figures/ScratterPlot.png","png")
     close;
     save outputs\data\workspaceSaision.mat Sigma_chapeau titles mu R_chapeau sd 
    
