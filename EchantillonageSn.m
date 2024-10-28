@@ -1,8 +1,8 @@
 %Loi Normale
-%function E = EchantillonageSn()
+% E = function  EchantillonageSn()
 alpha = 2; beta = 1; n = 1000;
 W = betarnd(alpha,beta,n,1);
-h = @(x)(4*x(1-x)) 
+h = @(x)(4*x*(1-x));
 for i=1:n
     h(W(i))
 %for i=1:M
@@ -13,7 +13,7 @@ for i=1:n
 %    f = pdf("Nakagami",sd,n-1/2,1);
     %hist(f)
 %    NSn(i) = f
-%end
+end
 figure;
 subplot(2,1,1)
 histogram(Sn);

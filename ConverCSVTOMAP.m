@@ -14,6 +14,7 @@ opts.Delimiter = ";";
 
 % Specify column names and types
 VariableNames = ["TempsDeJeuenSec", "ButsEsprs", "Lancers"];
+ 
 opts.VariableNames = VariableNames;
 opts.VariableTypes = ["double", "double", "double"];
 
@@ -23,9 +24,9 @@ opts.EmptyLineRule = "read";
 
 % Import the data
 TableSaison20232024 = readtable("datasets\Saison20232024.csv", opts);
-Saison20232024 = table2array(TableSaison20232024);
+Data = table2array(TableSaison20232024);
 
-save datasets\Saison20232024.mat Saison20232024 Saison20232024 VariableNames
+save datasets\Saison20232024.mat Data VariableNames
 
 %% Clear temporary variables
 clear opts
