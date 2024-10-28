@@ -4,8 +4,12 @@ function ans = Saison (path)
     path="datasets\Saison20232024.mat"; 
  end
  x = input("input file path, defauld is: datasets\Saison20232024.mat");
+ if isempty(x)
+    x = path;
+ end
  [Mtilde,M,mu,Sigma_chapeau,R_chapeau, sd] = DefaultStats(x);
- disp(["La moyenne ",mu, "Sigma Chapeau",Sigma_chapeau, "R chapeau ",R_chapeau, "Standart deviation", sd]);
+ out = fprintf('La moyenne %d, Sigma Chapeau %d, R chapeau %d, Standart deviation %d\n',mu, Sigma_chapeau, R_chapeau, sd);
+ disp(out);
  disp("Work space save at outputs\data\workspaceSaision.mat");
  disp("images save at outputs\figures");
 end

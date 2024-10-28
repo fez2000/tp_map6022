@@ -4,8 +4,11 @@ function [Mtilde,M,mu,Sigma_chapeau,R_chapeau, sd] = DefaultStats(path, titles)
         path="datasets\Saison20232024.mat"; 
         titles = ["Temps De Jeuen Sec", "Buts Esprs", "Lancers"];
     end 
-    load(path);
-    
+    if isfile(path)
+        load(path);
+    else
+    disp([x, "Not Found"]);
+    end    
     
     %calcule de la moyenne 
     M = Data;
