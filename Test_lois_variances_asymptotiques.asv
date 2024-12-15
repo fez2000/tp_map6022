@@ -1,0 +1,17 @@
+function [SK,SP, SPT] = Test_lois_variances_asymptotiques(C, M,d,kendallTauC)
+    arguments
+        C = 15; % la lois 
+        M = 800; % 
+        d = 25;
+        kendallTauC = 0;
+    end
+   
+
+    [SK,SP, SPT] = Kendall_Sperman_asymptotiques(C, M,d,kendallTauC);
+    fig = figure; %ploting surface
+    ScatterPlotNormalised([SK, SPT],["Normal","Normal"],["X","Y"]);
+   
+
+    savefig("outputs/figures/ScatterPlotRanksAdequations_Test_lois_variances_asymptotiques.fig")
+    saveas(fig,"outputs/figures/ScatterPlotRanksAdequations_Test_lois_variances_asymptotiques.png","png")
+end
